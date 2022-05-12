@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] private GameObject LocalPlayerPrefab;
     [SerializeField] private GameObject ForeignPlayerPrefab;
-    private Dictionary<string, GameObject> Players = new Dictionary<string, GameObject>();
+    private Dictionary<string, Player> Players = new Dictionary<string, Player>();
 
     public void Start()
     {
@@ -57,30 +57,28 @@ public class LevelManager : MonoBehaviour
         string username = message.GetString();
         if (AuthManager.Singleton.username == username)
         {
-            Singleton.Players.Add(username, Instantiate(Singleton.LocalPlayerPrefab, message.GetVector3(), message.GetQuaternion()));
+            GameObject player_gameobject = Instantiate(Singleton.LocalPlayerPrefab, message.GetVector3(), message.GetQuaternion());
+            Singleton.Players.Add(username, player_gameobject.GetComponent<Player>());
 
             Loading.Singleton.DisableLoading();
         }
         else
         {
-            Singleton.Players.Add(username, Instantiate(Singleton.ForeignPlayerPrefab, message.GetVector3(), message.GetQuaternion()));
+            GameObject player_gameobject = Instantiate(Singleton.ForeignPlayerPrefab, message.GetVector3(), message.GetQuaternion());
+            Singleton.Players.Add(username, player_gameobject.GetComponent<Player>());
         }
 
-        GameObject player = Singleton.Players[username];
+        GameObject player = Singleton.Players[username].gameObject;
 
         player.name = $"Player - {username}";
     }
 
-    [MessageHandler((ushort)Messages.STC.testing_r)]
-    private static void TestingR (Message message)
+    [MessageHandler((ushort)Messages.STC.playermove)]
+    private static void PlayerMove(Message message)
     {
-        Debug.Log("reliable");
+        if (Singleton.Players.TryGetValue(message.GetString(), out Player player))
+        {
+            player.Move(message.GetUInt(), message.GetVector3(), message.GetVector3());
+        }
     }
-
-    [MessageHandler((ushort)Messages.STC.testing_ur)]
-    private static void TestingUR(Message message)
-    {
-        Debug.Log("unreliable");
-    }
-
 }

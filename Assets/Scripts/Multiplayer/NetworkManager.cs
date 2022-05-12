@@ -9,12 +9,12 @@ public class Messages
     // Server to client id's
     public enum STC : ushort
     {
-        auth_fail = 1,
+        sync_tick = 1,
+        auth_fail,
         auth_malformed,
         auth_success,
         create_player,
-        testing_r,
-        testing_ur
+        playermove,
     }
 
     // Client to sever id's
@@ -22,6 +22,7 @@ public class Messages
     {
         auth_attempt = 1,
         openworldloaded,
+        inputs,
     }
 }
 
@@ -51,17 +52,44 @@ public class NetworkManager : MonoBehaviour
 
     public Client Client { get; private set; }
 
+    private uint _serverTick;
+    public uint ServerTick
+    {
+        get => _serverTick;
+        private set
+        {
+            _serverTick = value;
+            InterpolationTick = (uint)(value - TicksBetweenPositionUpdates);
+        }
+    }
+    public uint InterpolationTick { get; private set; }
+    private uint _ticksBetweenPositionUpdates = 2;
+    public uint TicksBetweenPositionUpdates
+    {
+        get => _ticksBetweenPositionUpdates;
+        private set
+        {
+            _ticksBetweenPositionUpdates = value;
+            InterpolationTick = (uint)(ServerTick - value);
+        }
+    }
+
+    [SerializeField] private uint TickDivergenceTolerance = 1;
+
     private void Start()
     {
         // RiptideLogging stuff
         RiptideLogger.Initialize(Debug.Log, Debug.Log, Debug.LogWarning, Debug.LogError, false);
         // Making game server client
         Client = new Client();
+
+        ServerTick = 2;
     }
 
     private void FixedUpdate()
     {
         Client.Tick();
+        ServerTick++;
     }
 
     public void Connect()
@@ -72,5 +100,20 @@ public class NetworkManager : MonoBehaviour
             Client.Connect(server_addr);
             AuthManager.Singleton.AuthWithServer();
         }
+    }
+
+    private void SetTick(uint serverTick)
+    {
+        if (Mathf.Abs(ServerTick - serverTick) > TickDivergenceTolerance)
+        {
+            Debug.Log($"tick {ServerTick} => {serverTick}");
+            ServerTick = serverTick;
+        }
+    }
+
+    [MessageHandler((ushort)Messages.STC.sync_tick)]
+    private static void SyncTick(Message message)
+    {
+        Singleton.SetTick(message.GetUInt());
     }
 }
