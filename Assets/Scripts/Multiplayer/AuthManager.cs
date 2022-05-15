@@ -31,6 +31,7 @@ public class AuthManager : MonoBehaviour
 
     public string API_URL { get; private set; } = "http://127.0.0.1:8000/api/client";
     public string username { get; private set; }
+    public ushort ClientID { get; private set; }
     private string auth_token;
 
     public string error_msg = "";
@@ -104,6 +105,7 @@ public class AuthManager : MonoBehaviour
     private static void AuthSuccess(Message message)
     {
         Debug.Log("login success");
+        Singleton.ClientID = message.GetUShort();
         SceneManager.LoadScene("OpenWorld");
     }
 

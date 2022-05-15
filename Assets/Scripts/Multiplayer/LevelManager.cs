@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField] private GameObject LocalPlayerPrefab;
     [SerializeField] private GameObject ForeignPlayerPrefab;
-    private Dictionary<string, Player> Players = new Dictionary<string, Player>();
+    private Dictionary<ushort, Player> Players = new Dictionary<ushort, Player>();
 
     public void Start()
     {
@@ -55,28 +55,37 @@ public class LevelManager : MonoBehaviour
     private static void CreatePlayer(Message message)
     {
         string username = message.GetString();
-        if (AuthManager.Singleton.username == username)
+        ushort ClientID = message.GetUShort();
+        if (AuthManager.Singleton.ClientID == ClientID)
         {
             GameObject player_gameobject = Instantiate(Singleton.LocalPlayerPrefab, message.GetVector3(), message.GetQuaternion());
-            Singleton.Players.Add(username, player_gameobject.GetComponent<Player>());
+            Singleton.Players.Add(ClientID, player_gameobject.GetComponent<Player>());
 
             Loading.Singleton.DisableLoading();
         }
         else
         {
             GameObject player_gameobject = Instantiate(Singleton.ForeignPlayerPrefab, message.GetVector3(), message.GetQuaternion());
-            Singleton.Players.Add(username, player_gameobject.GetComponent<Player>());
+            Singleton.Players.Add(ClientID, player_gameobject.GetComponent<Player>());
         }
 
-        GameObject player = Singleton.Players[username].gameObject;
+        GameObject player = Singleton.Players[ClientID].gameObject;
 
-        player.name = $"Player - {username}";
+        player.name = $"Player - {ClientID}:{username}";
+    }
+
+    [MessageHandler((ushort)Messages.STC.remove_player)]
+    private static void RemovePlayer(Message message)
+    {
+        ushort ClientID = message.GetUShort();
+        Destroy(Singleton.Players[ClientID].gameObject);
+        Singleton.Players.Remove(ClientID);
     }
 
     [MessageHandler((ushort)Messages.STC.playermove)]
     private static void PlayerMove(Message message)
     {
-        if (Singleton.Players.TryGetValue(message.GetString(), out Player player))
+        if (Singleton.Players.TryGetValue(message.GetUShort(), out Player player))
         {
             player.Move(message.GetUInt(), message.GetVector3(), message.GetVector3());
         }

@@ -14,7 +14,10 @@ public class Messages
         auth_malformed,
         auth_success,
         create_player,
+        remove_player,
         playermove,
+        player_died,
+        player_respawn,
     }
 
     // Client to sever id's
