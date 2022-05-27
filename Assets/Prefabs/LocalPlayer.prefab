@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1351163910160733773}
-  sensitvity: 100
+  sensitvity: 3
   ClampAngle: 85
   cameraHolder: {fileID: 4298625369642524833}
 --- !u!1 &4710061859529113257
