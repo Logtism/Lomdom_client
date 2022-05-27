@@ -11,6 +11,8 @@ public class CameraLook : MonoBehaviour
     private float VertialRotation;
     private float HorizontalRotation;
 
+    public GameObject cameraHolder;
+
     private void Start()
     {
         VertialRotation = transform.localEulerAngles.x;
@@ -26,14 +28,26 @@ public class CameraLook : MonoBehaviour
         {
             ToggleCursorMode();
         }
-        
+
         if (Cursor.lockState == CursorLockMode.Locked)
         {
-            Look();
+            //Look();
+            LookButItsBetterCode();
         }
 
         Debug.DrawRay(transform.position, transform.forward * 2f, Color.green);
     }
+
+    private void LookButItsBetterCode()
+    {
+        transform.Rotate(Vector3.up* Input.GetAxisRaw("Mouse X") * sensitvity);
+
+        ClampAngle += Input.GetAxisRaw("Mouse Y") * sensitvity;
+        ClampAngle = Mathf.Clamp(ClampAngle, -90f, 90f);
+
+		cameraHolder.transform.localEulerAngles = Vector3.left* ClampAngle;
+}
+
 
     private void Look()
     {
