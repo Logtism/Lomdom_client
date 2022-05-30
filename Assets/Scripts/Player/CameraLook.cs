@@ -46,7 +46,7 @@ public class CameraLook : MonoBehaviour
         ClampAngle = Mathf.Clamp(ClampAngle, -90f, 90f);
 
 		cameraHolder.transform.localEulerAngles = Vector3.left* ClampAngle;
-}
+    }
 
 
     private void Look()

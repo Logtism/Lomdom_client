@@ -1578,6 +1578,7 @@ GameObject:
   - component: {fileID: 5942987145221005608}
   - component: {fileID: 1174709644788541394}
   - component: {fileID: 7757823954795261380}
+  - component: {fileID: 5942987145221005609}
   m_Layer: 0
   m_Name: PlayerController_REP
   m_TagString: Untagged
@@ -1597,11 +1598,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91d20b902c73baf48bc1d87d65f78724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
-  fastMovementSpeed: 100
-  freeLookSensitivity: 3
-  zoomSensitivity: 10
-  fastZoomSensitivity: 50
+  speed: 50
+  rb: {fileID: 5942987145221005609}
+  movement: {x: 0, y: 0, z: 0}
+  sensitvity: 3
+  ClampAngle: 85
+  cameraHolder: {fileID: 2616710036790166245}
+--- !u!54 &5942987145221005609
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942987145221005607}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!4 &6979532538928136839
 Transform:
   m_ObjectHideFlags: 0
