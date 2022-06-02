@@ -31,14 +31,13 @@ public class CameraLook : MonoBehaviour
 
         if (Cursor.lockState == CursorLockMode.Locked)
         {
-            //Look();
-            LookButItsBetterCode();
+            Look();
         }
 
         Debug.DrawRay(transform.position, transform.forward * 2f, Color.green);
     }
 
-    private void LookButItsBetterCode()
+    private void Look()
     {
         transform.Rotate(Vector3.up* Input.GetAxisRaw("Mouse X") * sensitvity);
 
@@ -48,22 +47,7 @@ public class CameraLook : MonoBehaviour
 		cameraHolder.transform.localEulerAngles = Vector3.left* ClampAngle;
     }
 
-
-    private void Look()
-    {
-        float MouseVertical = -Input.GetAxis("Mouse Y");
-        float MouseHorizontal = Input.GetAxis("Mouse X");
-
-        VertialRotation += MouseVertical * sensitvity * Time.deltaTime;
-        HorizontalRotation += MouseHorizontal * sensitvity * Time.deltaTime;
-
-        VertialRotation = Mathf.Clamp(VertialRotation, -ClampAngle, ClampAngle);
-
-        transform.localRotation = Quaternion.Euler(VertialRotation, 0f, 0f);
-        player.transform.rotation = Quaternion.Euler(0f, HorizontalRotation, 0f);
-    }
-
-    private void ToggleCursorMode()
+    public void ToggleCursorMode()
     {
         Cursor.visible = !Cursor.visible;
 
