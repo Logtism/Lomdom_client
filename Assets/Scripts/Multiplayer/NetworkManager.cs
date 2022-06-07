@@ -10,14 +10,31 @@ public class Messages
     public enum STC : ushort
     {
         sync_tick = 1,
+
         auth_fail,
         auth_malformed,
         auth_success,
+
         create_player,
         remove_player,
+
         playermove,
-        player_died,
-        player_respawn,
+
+        damage_player,
+        heal_player,
+        kill_player,
+        respawn_player,
+
+        damage_ai,
+        heal_ai,
+        kill_ai,
+        respawn_ai,
+
+        weapon_switch,
+        weapon_reload,
+
+        mission_started,
+        mission_already_active,
     }
 
     // Client to sever id's
@@ -25,7 +42,14 @@ public class Messages
     {
         auth_attempt = 1,
         openworldloaded,
+
         inputs,
+
+        attack,
+        weapon_switch,
+        weapon_reload,
+
+        start_mission,
     }
 }
 

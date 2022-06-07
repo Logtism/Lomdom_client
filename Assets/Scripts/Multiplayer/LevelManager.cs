@@ -44,6 +44,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject LocalPlayerPrefab;
     [SerializeField] private GameObject ForeignPlayerPrefab;
     private Dictionary<ushort, Player> Players = new Dictionary<ushort, Player>();
+    public Player LocalPlayer;
 
     public void Start()
     {
@@ -60,7 +61,7 @@ public class LevelManager : MonoBehaviour
         {
             GameObject player_gameobject = Instantiate(Singleton.LocalPlayerPrefab, message.GetVector3(), message.GetQuaternion());
             Singleton.Players.Add(ClientID, player_gameobject.GetComponent<Player>());
-
+            Singleton.LocalPlayer = player_gameobject.GetComponent<Player>();
             Loading.Singleton.DisableLoading();
         }
         else
@@ -80,6 +81,39 @@ public class LevelManager : MonoBehaviour
         ushort ClientID = message.GetUShort();
         Destroy(Singleton.Players[ClientID].gameObject);
         Singleton.Players.Remove(ClientID);
+    }
+
+    [MessageHandler((ushort)Messages.STC.kill_player)]
+    private static void KillPlayer(Message message)
+    {
+        ushort ClientID = message.GetUShort();
+        Player player = Singleton.Players[ClientID];
+
+        if (player.IsLocal)
+        {
+            // Show a respawn screen.
+        }
+        else
+        {
+            player.gameObject.SetActive(false);
+        }
+    }
+
+    [MessageHandler((ushort)Messages.STC.respawn_player)]
+    private static void RespawnPlayer(Message message)
+    {
+        // At some point should move the player to a respawn point but this needs to be added to msg in the Servers PlayerManager.ReSpawnPlayer function.
+        ushort ClientID = message.GetUShort();
+        Player player = Singleton.Players[ClientID];
+
+        if (player.IsLocal)
+        {
+            // Turn off the respawn screen and active the player gameobject.
+        }
+        else
+        {
+            player.gameObject.SetActive(true);
+        }
     }
 
     [MessageHandler((ushort)Messages.STC.playermove)]

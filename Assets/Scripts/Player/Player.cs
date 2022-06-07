@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
 
         if (IsLocal == false)
         {
-            CamTransform.forward = forward;
+            // Used for rotation but its a bit fucked so yeah.
+            // CamTransform.forward = forward;
         }
     }
 }

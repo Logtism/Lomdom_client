@@ -4,6 +4,27 @@ using UnityEngine;
 
 public class CameraLook : MonoBehaviour
 {
+    private static CameraLook _singleton;
+    public static CameraLook Singleton
+    {
+        get => _singleton;
+        private set
+        {
+            if (_singleton == null)
+                _singleton = value;
+            else if (_singleton != value)
+            {
+                Debug.Log($"{nameof(CameraLook)} instance already exists, destroying object!");
+                Destroy(value);
+            }
+        }
+    }
+
+    private void Awake()
+    {
+        Singleton = this;
+    }
+
     [SerializeField] private Player player;
     [SerializeField] private float sensitvity = 3f;
     [SerializeField] private float ClampAngle = 85f;
