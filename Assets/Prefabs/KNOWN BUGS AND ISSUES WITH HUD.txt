@@ -1,0 +1,7 @@
+- When force hiding the HUD upon opening the pause menu, the timers for hiding the HUD DO NOT reset and will continue to count down.
+  Attempting to call a HUD update while this happens will update HUD values but WILL NOT make the HUD visible. 
+  If multiple HUD updates are called in a chain while this happens, the HUD will be noticiably missing from the game for an extended period of time.
+  (I beleive the timers stack while the HUD is in this state for some reason, but I may be wrong about that)
+
+- If a HUD update is called and another is called while the timer for hiding the HUD for the first call is = 0 but the HUD 
+  fade out animation is still playing, then the timer of the second HUD will run at x2 speed. This doesnt cause any noticible issues.

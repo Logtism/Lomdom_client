@@ -17,6 +17,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+        //need to add a check for pauseMenuOpen before running movement
         if (Input.GetKey(KeyCode.W))
         {
             inputs[0] = true;
