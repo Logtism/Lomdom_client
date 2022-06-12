@@ -8,7 +8,8 @@ TagManager:
   - Node
   - Road
   - Cell
-  - MissionMenuManager
+  - LocalPlayer
+  - HeistInfoManager
   layers:
   - Default
   - TransparentFX

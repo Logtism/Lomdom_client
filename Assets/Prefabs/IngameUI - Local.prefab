@@ -546,13 +546,14 @@ GameObject:
   - component: {fileID: 6829101696751985161}
   - component: {fileID: 5545615810337436924}
   - component: {fileID: 7203563550658920382}
+  - component: {fileID: 6779414584821100831}
   m_Layer: 0
-  m_Name: MissionType
+  m_Name: HeistType
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6829101696751985161
 RectTransform:
   m_ObjectHideFlags: 0
@@ -564,12 +565,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7097410162430425230}
+  m_Father: {fileID: 4984743663075587481}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 312.5, y: -25}
+  m_AnchoredPosition: {x: 312.5, y: -24.75}
   m_SizeDelta: {x: 625, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5545615810337436924
@@ -600,7 +601,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ROBBERY
+  m_text: HEIST TYPE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -669,6 +670,25 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!95 &6779414584821100831
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971653816801396760}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ec0f79aa8280eb4699e5a604fe95b60, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1386590773467017469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,6 +2691,98 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &3176938387923298342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4984743663075587481}
+  - component: {fileID: 2267067973216328927}
+  - component: {fileID: 5067770926624219296}
+  - component: {fileID: 5508039203152324488}
+  m_Layer: 5
+  m_Name: AnimationMask
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &4984743663075587481
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176938387923298342}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6829101696751985161}
+  - {fileID: 5179769127155395866}
+  - {fileID: 8815363913328850181}
+  m_Father: {fileID: 7097410162430425230}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: 0}
+  m_SizeDelta: {x: 1000, y: -0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2267067973216328927
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176938387923298342}
+  m_CullTransparentMesh: 1
+--- !u!114 &5067770926624219296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176938387923298342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5508039203152324488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176938387923298342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 0
 --- !u!1 &3203992503532102845
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,16 +2792,17 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3611297810125994793}
+  - component: {fileID: 2940463180593201963}
   - component: {fileID: 5226248595518376610}
   - component: {fileID: 4443655991167757643}
   - component: {fileID: 7748811549081345029}
   m_Layer: 0
-  m_Name: MissionMenu
-  m_TagString: MissionMenuManager
+  m_Name: HeistMenu
+  m_TagString: HeistInfoManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3611297810125994793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2710,6 +2823,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2940463180593201963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3203992503532102845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a74e208cb6aeb004194a7319e7ee4b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeistTypeText: {fileID: 7203563550658920382}
+  HeistNameText: {fileID: 9076473884603770737}
+  heistInfoVisible: 0
+  HeistType: {fileID: 6779414584821100831}
+  HeistName: {fileID: 7559997590019221947}
+  SetupHeist: {fileID: 8763040428395171980}
+  animationMask: {fileID: 3176938387923298342}
 --- !u!223 &5226248595518376610
 Canvas:
   m_ObjectHideFlags: 0
@@ -2916,13 +3048,14 @@ GameObject:
   - component: {fileID: 5179769127155395866}
   - component: {fileID: 825804508174400427}
   - component: {fileID: 9076473884603770737}
+  - component: {fileID: 7559997590019221947}
   m_Layer: 0
-  m_Name: MissionName
+  m_Name: HeistName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5179769127155395866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2934,12 +3067,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7097410162430425230}
+  m_Father: {fileID: 4984743663075587481}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 500, y: -82.5}
+  m_AnchoredPosition: {x: 500, y: -82.25}
   m_SizeDelta: {x: 1000, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &825804508174400427
@@ -2970,7 +3103,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MISSION NAME
+  m_text: HEIST NAME
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3039,6 +3172,25 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!95 &7559997590019221947
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556747726567487767}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d08a967159b350742b2dc0ba477ee31f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3571596580400316345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3051,13 +3203,14 @@ GameObject:
   - component: {fileID: 5513980287618434693}
   - component: {fileID: 4587328395051943795}
   - component: {fileID: 4609759688278275479}
+  - component: {fileID: 8763040428395171980}
   m_Layer: 0
-  m_Name: SetupMission
+  m_Name: SetupHeist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8815363913328850181
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3070,12 +3223,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 21729775554686926}
-  m_Father: {fileID: 7097410162430425230}
+  m_Father: {fileID: 4984743663075587481}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 255.5, y: 48.5}
+  m_AnchoredPosition: {x: 255.5, y: 48.25}
   m_SizeDelta: {x: 510, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5513980287618434693
@@ -3160,6 +3313,25 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &8763040428395171980
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3571596580400316345}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bafd277068a92a245a0befd2f96b8f81, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3572007507994414232
 GameObject:
   m_ObjectHideFlags: 0
@@ -3588,7 +3760,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Setup mission (E)
+  m_text: Setup heist (E)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4551,9 +4723,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6829101696751985161}
-  - {fileID: 5179769127155395866}
-  - {fileID: 8815363913328850181}
+  - {fileID: 4984743663075587481}
   m_Father: {fileID: 3611297810125994793}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
