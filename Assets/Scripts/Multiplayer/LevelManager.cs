@@ -62,6 +62,7 @@ public class LevelManager : MonoBehaviour
             GameObject player_gameobject = Instantiate(Singleton.LocalPlayerPrefab, message.GetVector3(), message.GetQuaternion());
             Singleton.Players.Add(ClientID, player_gameobject.GetComponent<Player>());
             Singleton.LocalPlayer = player_gameobject.GetComponent<Player>();
+            Singleton.LocalPlayer.health = 100;
             Loading.Singleton.DisableLoading();
         }
         else
@@ -123,5 +124,11 @@ public class LevelManager : MonoBehaviour
         {
             player.Move(message.GetUInt(), message.GetVector3(), message.GetVector3());
         }
+    }
+
+    [MessageHandler((ushort)Messages.STC.damage_player)]
+    private static void DamagePlayer(Message message)
+    {
+        Singleton.LocalPlayer.health = message.GetInt();
     }
 }
