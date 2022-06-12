@@ -20,15 +20,15 @@ public class Messages
 
         playermove,
 
-        damage_player,
-        heal_player,
+        update_health,
+        update_money,
+
         kill_player,
         respawn_player,
 
         damage_ai,
-        heal_ai,
+        spawn_ai,
         kill_ai,
-        respawn_ai,
 
         weapon_switch,
         weapon_reload,

@@ -33,10 +33,10 @@ public class WeaponWheel : MonoBehaviour
     private bool WheelActive = false;
 
     private GameObject ActiveModel;
-    private Weapon ActiveWeapon;
+    public Weapon ActiveWeapon;
 
     private float LastShotTimer;
-    private uint CurrectAmmo;
+    public uint CurrectAmmo;
     private bool Reloading = false;
     private float ReloadTimer;
     public void ToggleWheel()

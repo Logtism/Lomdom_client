@@ -62,7 +62,7 @@ public class LevelManager : MonoBehaviour
             GameObject player_gameobject = Instantiate(Singleton.LocalPlayerPrefab, message.GetVector3(), message.GetQuaternion());
             Singleton.Players.Add(ClientID, player_gameobject.GetComponent<Player>());
             Singleton.LocalPlayer = player_gameobject.GetComponent<Player>();
-            Singleton.LocalPlayer.health = 100;
+            Singleton.LocalPlayer.Health = 100;
             Loading.Singleton.DisableLoading();
         }
         else
@@ -126,9 +126,15 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    [MessageHandler((ushort)Messages.STC.damage_player)]
-    private static void DamagePlayer(Message message)
+    [MessageHandler((ushort)Messages.STC.update_health)]
+    private static void UpdateHealth(Message message)
     {
-        Singleton.LocalPlayer.health = message.GetInt();
+        Singleton.LocalPlayer.Health = message.GetInt();
+    }
+
+    [MessageHandler((ushort)Messages.STC.update_money)]
+    private static void UpdateMoney(Message message)
+    {
+        Singleton.LocalPlayer.Balance = message.GetFloat();
     }
 }

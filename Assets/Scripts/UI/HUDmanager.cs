@@ -40,13 +40,13 @@ public class HUDmanager : MonoBehaviour
     //[Header("Player info manager")]
     //public GameObject playerInfoManager;
 
-    private int currentMoney;
-    private int currentMAXmoney;
+    private float currentMoney;
+    private float currentMAXmoney;
     private float moneyUItimer;
     private bool moneyUIactive = true;
 
-    private int currentAmmoRound;
-    private int currentAmmoTotal;
+    private uint currentAmmoRound;
+    private uint currentAmmoTotal;
     private float ammoUItimer;
     private bool ammoUIactive = true;
 
@@ -92,7 +92,8 @@ public class HUDmanager : MonoBehaviour
 
     public void updateMoney()
     {
-        //currentMAXmoney = playerInfoManager.GetComponent<PlayerInfo>().PlayerMoney;
+        // currentMAXmoney = playerInfoManager.GetComponent<PlayerInfo>().PlayerMoney;
+        currentMAXmoney = LevelManager.Singleton.LocalPlayer.Balance;
 
         if (!moneyUIactive && hudEnabled)
             StartCoroutine(moneyInteract());
@@ -106,8 +107,18 @@ public class HUDmanager : MonoBehaviour
 
     public void updateAmmo()
     {
-        //currentAmmoRound = playerInfoManager.GetComponent<PlayerInfo>().CurrentWeaponAmmoRound;
-        //currentAmmoTotal = playerInfoManager.GetComponent<PlayerInfo>().CurrentWeaponAmmoTotal;
+        if (WeaponWheel.Singleton.ActiveWeapon)
+        {
+            currentAmmoRound = WeaponWheel.Singleton.CurrectAmmo;
+            currentAmmoTotal = WeaponWheel.Singleton.ActiveWeapon.MagCapacity;
+        }
+        else
+        {
+            currentAmmoRound = 0;
+            currentAmmoTotal = 0;
+        }
+
+
         AmmoText.text = currentAmmoRound.ToString() + "/" + currentAmmoTotal.ToString();
 
         if (!ammoUIactive && hudEnabled)
@@ -122,7 +133,7 @@ public class HUDmanager : MonoBehaviour
 
     public void updateHealth()
     {
-        //health = playerInfoManager.GetComponent<PlayerInfo>().CurrentHealth;
+        health = LevelManager.Singleton.LocalPlayer.Health;
 
         HealthBarImage.fillAmount = health / maxHealth;
 

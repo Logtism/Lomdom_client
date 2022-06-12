@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Interpolator interpolator;
 
     public bool IsLocal;
-    public int health;
+    public int Health;
+    public float Balance = 0f;
     public void Move(uint tick, Vector3 NewPosition, Vector3 forward)
     {
         interpolator.NewUpdate(tick, NewPosition);
