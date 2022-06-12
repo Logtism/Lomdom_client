@@ -69,6 +69,11 @@ public class HUDmanager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            showFullUI();
+        }
+
         MoneyText.text = "$" + currentMoney.ToString();
 
         if (currentMoney < currentMAXmoney)
