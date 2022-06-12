@@ -85,12 +85,17 @@ public class WeaponWheel : MonoBehaviour
     {
         if (ActiveWeapon && !Reloading)
         {
-            if (LastShotTimer >= ActiveWeapon.RateOfFire)
+            if (LastShotTimer >= ActiveWeapon.RateOfFire && CurrectAmmo > 0)
             {
                 Message message = Message.Create(MessageSendMode.reliable, Messages.CTS.attack);
                 message.AddVector3(Xrot.forward);
                 NetworkManager.Singleton.Client.Send(message);
+                CurrectAmmo--;
                 LastShotTimer = 0f;
+            }
+            else if (CurrectAmmo == 0)
+            {
+                Reload();
             }
         }
     }
