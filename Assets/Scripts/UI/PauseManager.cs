@@ -4,6 +4,24 @@ using UnityEngine;
 
 public class PauseManager : MonoBehaviour
 {
+    private static PauseManager _singleton;
+    public static PauseManager Singleton
+    {
+        get => _singleton;
+        private set
+        {
+            if (_singleton == null)
+                _singleton = value;
+            else if (_singleton != value)
+            {
+                Debug.Log($"{nameof(PauseManager)} instance already exists, destroying object!");
+                Destroy(value);
+            }
+        }
+    }
+
+//-------------------------------
+
     [Header("Menus")]
     [SerializeField] GameObject PauseMenuDefault;
     [SerializeField] GameObject SettingsMenu;
@@ -19,6 +37,8 @@ public class PauseManager : MonoBehaviour
 
     private void Awake()
     {
+        Singleton = this;
+
         pauseMenuOpen = false;
 
         PauseMenuDefault.SetActive(false);

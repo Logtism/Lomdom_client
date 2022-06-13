@@ -27,7 +27,7 @@ public class Interpolator : MonoBehaviour
     {
         for (int i = 0; i < futureTransformUpdates.Count; i++)
         {
-            if (NetworkManager.Singleton.ServerTick >= futureTransformUpdates[i].Tick);
+            if (NetworkManager.Singleton.ServerTick >= futureTransformUpdates[i].Tick)
             {
                 previous = to;
                 to = futureTransformUpdates[i];
