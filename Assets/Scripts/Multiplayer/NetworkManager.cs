@@ -27,7 +27,9 @@ public class Messages
         respawn_player,
 
         damage_ai,
-        spawn_ai,
+        sync_ai_pos,
+        spawn_waypoint_ai,
+        spawn_patrol_ai,
         kill_ai,
 
         weapon_switch,
