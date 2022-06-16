@@ -29,8 +29,8 @@ public class AuthManager : MonoBehaviour
         Singleton = this;
     }
 
-    // public string API_URL { get; private set; } = "https://5qgn3nwglr.pythonanywhere.com/api/client";
-    public string API_URL { get; private set; } = "http://127.0.0.1:8000/api/client";
+    // public string API_URL { get; private set; } = "http://127.0.0.1:8000/api/client";
+    public string API_URL { get; private set; } = "https://5qgn3nwglr.pythonanywhere.com/api/client";
     public string username { get; private set; }
     public ushort ClientID { get; private set; }
     private string auth_token;

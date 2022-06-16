@@ -64,9 +64,6 @@ public class LevelManager : MonoBehaviour
             Singleton.LocalPlayer = player_gameobject.GetComponent<Player>();
             Singleton.LocalPlayer.Health = 100;
             Loading.Singleton.DisableLoading();
-            Message mission = Message.Create(MessageSendMode.reliable, Messages.CTS.start_mission);
-            mission.AddInt(0);
-            NetworkManager.Singleton.Client.Send(mission);
         }
         else
         {
