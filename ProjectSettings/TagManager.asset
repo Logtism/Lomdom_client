@@ -10,14 +10,15 @@ TagManager:
   - Cell
   - LocalPlayer
   - HeistInfoManager
+  - MissionMenuManager
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enviroment
   - Water
   - UI
-  - 
+  - MapOnly
   - 
   - Terrain
   - Node

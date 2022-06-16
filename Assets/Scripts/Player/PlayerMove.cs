@@ -10,6 +10,8 @@ public class PlayerMove : MonoBehaviour
 
     private bool[] inputs;
 
+    public bool canMove = true;
+
     private void Start()
     {
         inputs = new bool[6];
@@ -17,30 +19,32 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        //need to add a check for pauseMenuOpen before running movement
-        if (Input.GetKey(KeyCode.W))
+        if (canMove)
         {
-            inputs[0] = true;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            inputs[1] = true;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            inputs[2] = true;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            inputs[3] = true;
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            inputs[4] = true;
-        }
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            inputs[5] = true;
+            if (Input.GetKey(KeyCode.W))
+            {
+                inputs[0] = true;
+            }
+            if (Input.GetKey(KeyCode.S))
+            {
+                inputs[1] = true;
+            }
+            if (Input.GetKey(KeyCode.A))
+            {
+                inputs[2] = true;
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                inputs[3] = true;
+            }
+            if (Input.GetKey(KeyCode.Space))
+            {
+                inputs[4] = true;
+            }
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                inputs[5] = true;
+            }
         }
     }
 

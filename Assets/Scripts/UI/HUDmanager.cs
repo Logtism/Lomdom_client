@@ -65,7 +65,6 @@ public class HUDmanager : MonoBehaviour
         HealthBarImage = HealthBar.GetComponent<Image>();
 
         unlockVisibility();
-        Debug.Log("niggers");
     }
 
     private void Update()
