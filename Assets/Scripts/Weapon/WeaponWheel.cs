@@ -64,15 +64,19 @@ public class WeaponWheel : MonoBehaviour
         {
             ActiveModel.SetActive(false);
         }
-        if (weapon && model)
+        if (weapon)
         {
             ActiveWeapon = weapon;
             CurrectAmmo = ActiveWeapon.MagCapacity;
-            ActiveModel = model;
-            model.SetActive(true);
+            if (model)
+            {
+                ActiveModel = model;
+                model.SetActive(true);
+            }
             Message message = Message.Create(MessageSendMode.reliable, Messages.CTS.weapon_switch);
             message.AddInt(ActiveWeapon.ID);
             NetworkManager.Singleton.Client.Send(message);
+            HUDmanager.Singleton.updateAmmo();
         }
         else
         {
@@ -91,6 +95,7 @@ public class WeaponWheel : MonoBehaviour
                 message.AddVector3(Xrot.forward);
                 NetworkManager.Singleton.Client.Send(message);
                 CurrectAmmo--;
+                HUDmanager.Singleton.updateAmmo();
                 LastShotTimer = 0f;
             }
             else if (CurrectAmmo == 0)
@@ -118,8 +123,11 @@ public class WeaponWheel : MonoBehaviour
             ReloadTimer += Time.deltaTime;
             if (ReloadTimer >= ActiveWeapon.ReloadTime)
             {
+
+                ReloadTimer = 0f;
                 CurrectAmmo = ActiveWeapon.MagCapacity;
                 Reloading = false;
+                HUDmanager.Singleton.updateAmmo();
             }
         }
 

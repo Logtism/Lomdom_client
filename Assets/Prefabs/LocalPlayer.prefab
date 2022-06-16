@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ce8243505e6824289a4fee9157272e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: ea78e42cd22dc584d8e43250c721ed4b, type: 2}
   Model: {fileID: 0}
 --- !u!1 &1330212799001041507
 GameObject:
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ce8243505e6824289a4fee9157272e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: ea78e42cd22dc584d8e43250c721ed4b, type: 2}
   Model: {fileID: 0}
 --- !u!1 &1503582413477841239
 GameObject:
@@ -1386,7 +1386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ce8243505e6824289a4fee9157272e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: ea78e42cd22dc584d8e43250c721ed4b, type: 2}
   Model: {fileID: 0}
 --- !u!1 &3805066837230112947
 GameObject:
@@ -1880,7 +1880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ce8243505e6824289a4fee9157272e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: ea78e42cd22dc584d8e43250c721ed4b, type: 2}
   Model: {fileID: 0}
 --- !u!1 &4710061858896646485
 GameObject:
@@ -2957,7 +2957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ce8243505e6824289a4fee9157272e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: ea78e42cd22dc584d8e43250c721ed4b, type: 2}
   Model: {fileID: 0}
 --- !u!1 &6615835218906247671
 GameObject:
@@ -3690,7 +3690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36ce8243505e6824289a4fee9157272e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
+  weapon: {fileID: 11400000, guid: ea78e42cd22dc584d8e43250c721ed4b, type: 2}
   Model: {fileID: 0}
 --- !u!1001 &4820242238907752407
 PrefabInstance:

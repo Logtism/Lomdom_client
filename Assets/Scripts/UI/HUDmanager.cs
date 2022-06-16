@@ -10,6 +10,22 @@ using UnityEngine.UI;
 
 public class HUDmanager : MonoBehaviour
 {
+    private static HUDmanager _singleton;
+    public static HUDmanager Singleton
+    {
+        get => _singleton;
+        private set
+        {
+            if (_singleton == null)
+                _singleton = value;
+            else if (_singleton != value)
+            {
+                Debug.Log($"{nameof(HUDmanager)} instance already exists, destroying object!");
+                Destroy(value);
+            }
+        }
+    }
+
     [Header("HUD settings")]
     public float fadeTime; //Time UI elements are visible for. Can be altered depending on context
     public int IncreaseRate; //Money increase animimation playback speed
@@ -61,6 +77,7 @@ public class HUDmanager : MonoBehaviour
 
     private void Awake()
     {
+        Singleton = this;
         //currentMAXmoney = playerInfoManager.GetComponent<PlayerInfo>().PlayerMoney;
         HealthBarImage = HealthBar.GetComponent<Image>();
 

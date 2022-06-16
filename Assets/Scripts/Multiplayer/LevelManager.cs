@@ -130,11 +130,13 @@ public class LevelManager : MonoBehaviour
     private static void UpdateHealth(Message message)
     {
         Singleton.LocalPlayer.Health = message.GetInt();
+        HUDmanager.Singleton.updateHealth();
     }
 
     [MessageHandler((ushort)Messages.STC.update_money)]
     private static void UpdateMoney(Message message)
     {
         Singleton.LocalPlayer.Balance = message.GetFloat();
+        HUDmanager.Singleton.updateMoney();
     }
 }

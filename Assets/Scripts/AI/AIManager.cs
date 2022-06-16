@@ -77,9 +77,12 @@ public class AIManager : MonoBehaviour
     private static void SyncAIPos(Message message)
     {
         AI ai = null;
-        if (Singleton.ais.TryGetValue(message.GetInt(), out ai))
+        if (Singleton != null)
         {
-            ai.Move(message.GetUInt(), message.GetVector3());
+            if (Singleton.ais.TryGetValue(message.GetInt(), out ai))
+            {
+                ai.Move(message.GetUInt(), message.GetVector3());
+            }
         }
     }
 }
