@@ -489,6 +489,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1199625995}
   - component: {fileID: 1199625994}
+  - component: {fileID: 1199625993}
+  - component: {fileID: 1199625996}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -496,6 +498,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1199625993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199625992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756f39fcff8937f418a18b443de4e860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missions:
+  - {fileID: 11400000, guid: 9ba50f920fa46f1429ef8bc09b5bcd14, type: 2}
 --- !u!114 &1199625994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,6 +541,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1199625996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199625992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b3d18c3fd054b44857ff12b8e92b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AiPrefabs:
+  - {fileID: 3602358361505579554, guid: 0dc63d943f5eb1948a640fed6c9ab15a, type: 3}
+  - {fileID: 3602358361505579554, guid: af2cbad68873e564e94b8236147fe879, type: 3}
 --- !u!1 &1382514150
 GameObject:
   m_ObjectHideFlags: 0

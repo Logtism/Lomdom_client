@@ -24,7 +24,6 @@ public class AI : MonoBehaviour
         ai_mode = AIMode.waypoint;
         this.id = id;
         this.Waypoint = Waypoint;
-        // GoToNextPoint();
     }
 
     public void SetInfoPatrol(int id, Vector3 Point)
@@ -32,7 +31,6 @@ public class AI : MonoBehaviour
         ai_mode = AIMode.patrol;
         this.id = id;
         this.Point = Point;
-        // GoToNextPoint();
     }
 
     public void Move(uint tick, Vector3 NewPosition)

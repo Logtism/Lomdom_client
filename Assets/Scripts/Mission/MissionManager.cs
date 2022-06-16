@@ -32,7 +32,8 @@ public class MissionManager : MonoBehaviour
         Singleton = this;
     }
 
-    private bool MissionActive;
+    [SerializeField] private Mission[] missions;
+    private Mission ActiveMission;
 
     public void StartMission(int mission_id)
     {
@@ -45,7 +46,15 @@ public class MissionManager : MonoBehaviour
     [MessageHandler((ushort)Messages.STC.mission_started)]
     private static void MissionStarted(Message message)
     {
+        Singleton.ActiveMission = Singleton.missions[message.GetInt()];
+        Singleton.ActiveMission.MissionStartFunction.Invoke();
+    }
 
+    [MessageHandler((ushort)Messages.STC.mission_ended)]
+    private static void MissionEnded(Message message)
+    {
+        Singleton.ActiveMission.MissionEndFunction.Invoke();
+        Singleton.ActiveMission = null;
     }
 
     [MessageHandler((ushort)Messages.STC.mission_already_active)]
