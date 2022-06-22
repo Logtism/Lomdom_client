@@ -2,9 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using RiptideNetworking;
 
 public class MissionMenuManager : MonoBehaviour
 {
+    private static MissionMenuManager _singleton;
+    public static MissionMenuManager Singleton
+    {
+        get => _singleton;
+        private set
+        {
+            if (_singleton == null)
+                _singleton = value;
+            else if (_singleton != value)
+            {
+                Debug.Log($"{nameof(MissionMenuManager)} instance already exists, destroying object!");
+                Destroy(value);
+            }
+        }
+    }
+
     [SerializeField] private GameObject missionMenu;
     [SerializeField] private Mission selectedMissionOnStart;
     [SerializeField] private TextMeshProUGUI missionTypeText;
@@ -16,6 +33,8 @@ public class MissionMenuManager : MonoBehaviour
 
     private void Awake()
     {
+        Singleton = this;
+
         missionMenuOpen = false;
         missionMenu.SetActive(false);
 
