@@ -3205,7 +3205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4984743663075587481
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3337,7 +3337,7 @@ MonoBehaviour:
   HeistType: {fileID: 6779414584821100831}
   HeistName: {fileID: 7559997590019221947}
   SetupHeist: {fileID: 8763040428395171980}
-  animationMask: {fileID: 3176938387923298342}
+  animationMask: {fileID: 7201892381722924726}
 --- !u!223 &5226248595518376610
 Canvas:
   m_ObjectHideFlags: 0
