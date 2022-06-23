@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using RiptideNetworking;
+using UnityEngine.UI;
 
 public class MissionMenuManager : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class MissionMenuManager : MonoBehaviour
     [SerializeField] private Mission selectedMissionOnStart;
     [SerializeField] private TextMeshProUGUI missionTypeText;
     [SerializeField] private TextMeshProUGUI missionRewardText;
-    [SerializeField] private TextMeshProUGUI otherMissionInfoText;   
+    [SerializeField] private Image missionImage;  
     
     public bool missionMenuOpen;
     public bool canStartMission;
@@ -40,7 +41,7 @@ public class MissionMenuManager : MonoBehaviour
 
         missionTypeText.text = selectedMissionOnStart.MissionName.ToString();
         //missionRewardText.text = "Mission reward: $" + selectedMissionOnStart.MissionReward.ToString();
-        //otherMissionInfoText.text = selectedMissionOnStart.MissionInfo.ToString();
+        //missionImage = selectedMissionOnStart.MissionImage;
     }
 
 
@@ -73,7 +74,7 @@ public class MissionMenuManager : MonoBehaviour
         {
             missionTypeText.text = mission.MissionName.ToString();
             //missionRewardText.text = "Mission reward: $" + mission.MissionReward.ToString();
-            //otherMissionInfoText.text = mission.MissionInfo.ToString();
+            //missionImage = mission.MissionImage;
 
             selectedMissionOnStart = mission;
 

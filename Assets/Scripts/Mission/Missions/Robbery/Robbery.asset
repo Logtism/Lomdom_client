@@ -15,7 +15,31 @@ MonoBehaviour:
   MissionName: Robbery
   MissionStartFunction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8779288548758354148, guid: e7dfa8a03850acc45842c21f10aa185f, type: 3}
+        m_TargetAssemblyTypeName: Robbery, Assembly-CSharp
+        m_MethodName: StartMission
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
   MissionEndFunction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8779288548758354148, guid: e7dfa8a03850acc45842c21f10aa185f, type: 3}
+        m_TargetAssemblyTypeName: Robbery, Assembly-CSharp
+        m_MethodName: EndMission
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
