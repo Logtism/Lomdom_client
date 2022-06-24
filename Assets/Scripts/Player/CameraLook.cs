@@ -20,19 +20,30 @@ public class CameraLook : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        Singleton = this;
-    }
-
+    [Header("Camera look settings")]
     [SerializeField] private Player player;
     [SerializeField] private float sensitvity = 3f;
     [SerializeField] private float ClampAngle = 85f;
+
+    [Header("Headbob settings")]
+    [SerializeField] private bool headbobEnabled;
+    [SerializeField, Range(0, 0.1f)] private float headbobAmplitude = 0.015f;
+    [SerializeField, Range(0, 30)] private float headbobFreqeuncy = 10.0f;
+    [SerializeField] private Transform playerCamera = null;
+    [SerializeField] private Transform playerCameraHolder = null;
+    private float toggleSpeed = 3.0f;
+    private Vector3 startPos;
 
     private float VertialRotation;
     private float HorizontalRotation;
 
     public GameObject cameraHolder;
+    private void Awake()
+    {
+        Singleton = this;
+
+        startPos = playerCamera.localPosition;
+    }
 
     private void Start()
     {
@@ -56,6 +67,40 @@ public class CameraLook : MonoBehaviour
         }
 
         Debug.DrawRay(transform.position, transform.forward * 2f, Color.green);
+
+        if (!headbobEnabled) return;
+
+        CheckMotion();
+        ResetPosition();
+    }
+
+    private void CheckMotion()
+    {
+        if (Input.GetKey(KeyCode.W)) PlayMotion(footstepMotion());
+        if (Input.GetKey(KeyCode.A)) PlayMotion(footstepMotion());
+        if (Input.GetKey(KeyCode.S)) PlayMotion(footstepMotion());
+        if (Input.GetKey(KeyCode.D)) PlayMotion(footstepMotion());
+
+        else return;
+    }
+
+    private void PlayMotion(Vector3 motion)
+    {
+        playerCamera.localPosition += motion;
+    }
+
+    private Vector3 footstepMotion()
+    {
+        Vector3 pos = Vector3.zero;
+        pos.y += Mathf.Sin(Time.time * headbobFreqeuncy) * headbobAmplitude;
+        pos.x += Mathf.Cos(Time.time * headbobFreqeuncy / 2) * headbobAmplitude * 2;
+        return pos;
+    }
+
+    private void ResetPosition()
+    {
+        if (playerCamera.localPosition == startPos) return;
+        playerCamera.localPosition = Vector3.Lerp(playerCamera.localPosition, startPos, 1 * Time.deltaTime);
     }
 
     private void Look()

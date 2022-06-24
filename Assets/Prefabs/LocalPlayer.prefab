@@ -1894,7 +1894,7 @@ GameObject:
   - component: {fileID: 1351163910160733773}
   - component: {fileID: 147297357780626846}
   - component: {fileID: 9077933403826654093}
-  - component: {fileID: 3850486108515940573}
+  - component: {fileID: 7514267377642166999}
   m_Layer: 0
   m_Name: LocalPlayer
   m_TagString: LocalPlayer
@@ -1966,7 +1966,7 @@ MonoBehaviour:
   TimeElapsed: 0
   TimeToReachTarget: 0.1
   MovementThreshold: 0.1
---- !u!114 &3850486108515940573
+--- !u!114 &7514267377642166999
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1981,6 +1981,11 @@ MonoBehaviour:
   player: {fileID: 1351163910160733773}
   sensitvity: 3
   ClampAngle: 85
+  headbobEnabled: 1
+  headbobAmplitude: 0.005
+  headbobFreqeuncy: 10
+  playerCamera: {fileID: 4615082722497934454}
+  playerCameraHolder: {fileID: 5123398907544565970}
   cameraHolder: {fileID: 4298625369642524833}
 --- !u!1 &4710061859529113257
 GameObject:
