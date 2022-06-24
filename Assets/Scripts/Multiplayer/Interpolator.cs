@@ -36,7 +36,7 @@ public class Interpolator : MonoBehaviour
                 futureTransformUpdates.RemoveAt(i);
                 i--;
                 TimeElapsed = 0f;
-                TimeToReachTarget = (to.Tick - from.Tick) * Time.fixedDeltaTime;
+                // TimeToReachTarget = (to.Tick - from.Tick) * Time.fixedDeltaTime;
             }
         }
         TimeElapsed += Time.deltaTime;

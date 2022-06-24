@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeElapsed: 0
-  TimeToReachTarget: 0.1
+  TimeToReachTarget: 1
   MovementThreshold: 0.1
 --- !u!1 &8439611662425089244
 GameObject:
