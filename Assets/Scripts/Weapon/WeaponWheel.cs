@@ -131,16 +131,16 @@ public class WeaponWheel : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && PauseManager.Singleton.menuIsOpen == false)
         {
             ToggleWheel();
         }
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && PauseManager.Singleton.menuIsOpen == false)
         {
             Fire();
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && PauseManager.Singleton.menuIsOpen == false)
         {
             Reload();
         }

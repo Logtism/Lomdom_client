@@ -56,11 +56,6 @@ public class CameraLook : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            ToggleCursorMode();
-        }
-
         if (Cursor.lockState == CursorLockMode.Locked)
         {
             Look();

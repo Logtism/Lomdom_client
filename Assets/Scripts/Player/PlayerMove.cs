@@ -6,11 +6,32 @@ using RiptideNetworking.Utils;
 
 public class PlayerMove : MonoBehaviour
 {
+    private static PlayerMove _singleton;
+    public static PlayerMove Singleton
+    {
+        get => _singleton;
+        private set
+        {
+            if (_singleton == null)
+                _singleton = value;
+            else if (_singleton != value)
+            {
+                Debug.Log($"{nameof(PlayerMove)} instance already exists, destroying object!");
+                Destroy(value);
+            }
+        }
+    }
+
     [SerializeField] private Transform camTransform;
 
     private bool[] inputs;
 
     public bool canMove = true;
+
+    private void Awake()
+    {
+        Singleton = this;
+    }
 
     private void Start()
     {

@@ -59,21 +59,21 @@ public class HUDmanager : MonoBehaviour
     private float currentMoney;
     private float currentMAXmoney;
     private float moneyUItimer;
-    private bool moneyUIactive = true;
+    public bool moneyUIactive = true;
 
     private uint currentAmmoRound;
     private uint currentAmmoTotal;
     private float ammoUItimer;
-    private bool ammoUIactive = true;
+    public bool ammoUIactive = true;
 
     private Image HealthBarImage;
     private const float maxHealth = 100f;
     private float health = maxHealth;
     private float healthUItimer;
-    private bool healthUIactive = true;
+    public bool healthUIactive = true;
 
     private float mapUItimer;
-    private bool mapUIactive = true;
+    public bool mapUIactive = true;
 
     private void Awake()
     {

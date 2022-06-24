@@ -5,6 +5,22 @@ using TMPro;
 
 public class HeistInfoManager : MonoBehaviour
 {
+    private static HeistInfoManager _singleton;
+    public static HeistInfoManager Singleton
+    {
+        get => _singleton;
+        private set
+        {
+            if (_singleton == null)
+                _singleton = value;
+            else if (_singleton != value)
+            {
+                Debug.Log($"{nameof(HeistInfoManager)} instance already exists, destroying object!");
+                Destroy(value);
+            }
+        }
+    }
+
     [SerializeField] private TextMeshProUGUI HeistTypeText;
     [SerializeField] private TextMeshProUGUI HeistNameText;
    
@@ -27,6 +43,8 @@ public class HeistInfoManager : MonoBehaviour
         SetupHeist.gameObject.SetActive(false);
 
         heistInfoVisible = false;
+
+        Singleton = this;
     }
 
     public void showHeistInfo()
@@ -57,5 +75,12 @@ public class HeistInfoManager : MonoBehaviour
         heistInfoVisible = false;
 
         //animationMask.SetActive(false);
+    }
+
+    public void forceHideHeistInfo()
+    {
+        HeistType.gameObject.SetActive(false);
+        HeistName.gameObject.SetActive(false);
+        SetupHeist.gameObject.SetActive(false);
     }
 }
