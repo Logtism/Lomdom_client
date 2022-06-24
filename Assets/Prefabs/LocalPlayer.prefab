@@ -1981,9 +1981,9 @@ MonoBehaviour:
   player: {fileID: 1351163910160733773}
   sensitvity: 3
   ClampAngle: 85
-  headbobEnabled: 1
+  headbobEnabled: 0
   headbobAmplitude: 0.005
-  headbobFreqeuncy: 10
+  headbobFreqeuncy: 17
   playerCamera: {fileID: 4615082722497934454}
   playerCameraHolder: {fileID: 5123398907544565970}
   cameraHolder: {fileID: 4298625369642524833}
