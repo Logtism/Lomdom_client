@@ -69,6 +69,11 @@ public class PauseManager : MonoBehaviour
                 HeistInfoManager.Singleton.forceHideHeistInfo();
             }
 
+            if(WeaponWheel.Singleton.WheelActive == true)
+            {
+                WeaponWheel.Singleton.ToggleWheel();
+            }
+
             menuIsOpen = true;
         }
     }

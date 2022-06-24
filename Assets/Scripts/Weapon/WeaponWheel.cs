@@ -30,7 +30,7 @@ public class WeaponWheel : MonoBehaviour
     [SerializeField] private Transform Xrot;
 
     [SerializeField] private GameObject[] WheelSegments;
-    private bool WheelActive = false;
+    public bool WheelActive = false;
 
     private GameObject ActiveModel;
     public Weapon ActiveWeapon;
