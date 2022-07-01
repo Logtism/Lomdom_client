@@ -87,6 +87,7 @@ public class MissionMenuManager : MonoBehaviour
         if(missionMenuOpen && canStartMission)
         {
             //start mission logic using selectedMissionOnStart
+            MissionManager.Singleton.StartMission(selectedMissionOnStart.MissionId);
         }
         
         else

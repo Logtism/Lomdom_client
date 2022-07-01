@@ -8,4 +8,5 @@ public class Mission : ScriptableObject
     [SerializeField] public string MissionName;
     [SerializeField] public MissionStart MissionStartFunction = new MissionStart();
     [SerializeField] public MissionEnd MissionEndFunction = new MissionEnd();
+    [SerializeField] public int MissionId;
 }
