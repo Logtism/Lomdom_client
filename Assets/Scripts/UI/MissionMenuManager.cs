@@ -52,6 +52,8 @@ public class MissionMenuManager : MonoBehaviour
 
         GameObject LocalPlayer = GameObject.FindWithTag("LocalPlayer");
         LocalPlayer.GetComponent<PlayerMove>().canMove = false;
+
+        CameraLook.Singleton.ToggleCursorMode();
     }
 
     public void closeMissionMenu()
@@ -61,6 +63,8 @@ public class MissionMenuManager : MonoBehaviour
 
         GameObject LocalPlayer = GameObject.FindWithTag("LocalPlayer");
         LocalPlayer.GetComponent<PlayerMove>().canMove = true;
+
+        CameraLook.Singleton.ToggleCursorMode();
     }
 
     public void updateMissionInfo(Mission mission)

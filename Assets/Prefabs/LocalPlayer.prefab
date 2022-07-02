@@ -200,6 +200,7 @@ MonoBehaviour:
   - {fileID: 437385011203540363}
   - {fileID: 6476315697375259760}
   - {fileID: 5062947934582420070}
+  WheelActive: 0
   ActiveWeapon: {fileID: 0}
   CurrectAmmo: 0
 --- !u!1 &437385011203540363
@@ -1981,7 +1982,7 @@ MonoBehaviour:
   player: {fileID: 1351163910160733773}
   sensitvity: 3
   ClampAngle: 85
-  headbobEnabled: 0
+  headbobEnabled: 1
   headbobAmplitude: 0.005
   headbobFreqeuncy: 17
   playerCamera: {fileID: 4615082722497934454}
