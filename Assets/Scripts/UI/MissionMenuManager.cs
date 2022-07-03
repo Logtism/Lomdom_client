@@ -26,8 +26,7 @@ public class MissionMenuManager : MonoBehaviour
     [SerializeField] private GameObject missionMenu;
     [SerializeField] private Mission selectedMissionOnStart;
     [SerializeField] private TextMeshProUGUI missionTypeText;
-    [SerializeField] private TextMeshProUGUI missionRewardText;
-    [SerializeField] private Image missionImage;  
+    [SerializeField] private TextMeshProUGUI missionRewardText;  
     
     public bool missionMenuOpen;
     public bool canStartMission;
@@ -41,7 +40,6 @@ public class MissionMenuManager : MonoBehaviour
 
         missionTypeText.text = selectedMissionOnStart.MissionName.ToString();
         //missionRewardText.text = "Mission reward: $" + selectedMissionOnStart.MissionReward.ToString();
-        //missionImage = selectedMissionOnStart.MissionImage;
     }
 
 
@@ -59,7 +57,8 @@ public class MissionMenuManager : MonoBehaviour
     public void closeMissionMenu()
     {
         missionMenu.SetActive(false);
-        missionMenuOpen = false;
+
+        StartCoroutine(closeDelay());
 
         GameObject LocalPlayer = GameObject.FindWithTag("LocalPlayer");
         LocalPlayer.GetComponent<PlayerMove>().canMove = true;
@@ -78,7 +77,6 @@ public class MissionMenuManager : MonoBehaviour
         {
             missionTypeText.text = mission.MissionName.ToString();
             //missionRewardText.text = "Mission reward: $" + mission.MissionReward.ToString();
-            //missionImage = mission.MissionImage;
 
             selectedMissionOnStart = mission;
 
@@ -98,5 +96,11 @@ public class MissionMenuManager : MonoBehaviour
         {
             Debug.Log("Player is not allowed to start mission");
         }
+    }
+
+    private IEnumerator closeDelay()
+    {
+        yield return new WaitForSeconds(0.01f);
+        missionMenuOpen = false;
     }
 }

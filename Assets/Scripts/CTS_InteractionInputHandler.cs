@@ -52,14 +52,18 @@ public class CTS_InteractionInputHandler : MonoBehaviour
             {
                 robberyTimer -= Time.deltaTime;
                 Debug.Log(robberyTimer);
-                if (robberyTimer <= 0)
-                {
-                    Message message = Message.Create(MessageSendMode.reliable, Messages.CTS.completeRobbery_input);
-                    NetworkManager.Singleton.Client.Send(message);
-                }
             }
             else
                 robberyTimer = robberyHoldTime;
+
+            if (robberyTimer < 0)
+            {
+                Debug.Log("completeTimer");
+                checkInputForRobbery = false;
+
+                Message message = Message.Create(MessageSendMode.reliable, Messages.CTS.completeRobbery_input);
+                NetworkManager.Singleton.Client.Send(message);
+            }
         }
     }
 }

@@ -31,7 +31,7 @@ public class PauseManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && MissionMenuManager.Singleton.missionMenuOpen == false)
         {
             if(menuIsOpen) { manualMenuClose(); }
 
@@ -64,11 +64,6 @@ public class PauseManager : MonoBehaviour
                 HUDmanager.Singleton.forceHideHUD();
             }
 
-            if (HeistInfoManager.Singleton.heistInfoVisible == true)
-            {
-                HeistInfoManager.Singleton.forceHideHeistInfo();
-            }
-
             if(WeaponWheel.Singleton.WheelActive == true)
             {
                 WeaponWheel.Singleton.ToggleWheel();
@@ -77,6 +72,4 @@ public class PauseManager : MonoBehaviour
             menuIsOpen = true;
         }
     }
-
-
 }

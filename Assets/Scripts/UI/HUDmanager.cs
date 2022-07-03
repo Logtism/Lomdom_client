@@ -40,9 +40,7 @@ public class HUDmanager : MonoBehaviour
     [Header("HUD Text elements")]
     [SerializeField] private TextMeshProUGUI MoneyText;
     [SerializeField] private TextMeshProUGUI AmmoText;
-
-    [Header("HUD Image elements")]
-    [SerializeField] private GameObject HealthBar;
+    [SerializeField] private TextMeshProUGUI HealthText;
 
     [Header("HUD Animators")]
     [SerializeField] private Animator MoneyAnimator;
@@ -79,7 +77,6 @@ public class HUDmanager : MonoBehaviour
     {
         Singleton = this;
         //currentMAXmoney = playerInfoManager.GetComponent<PlayerInfo>().PlayerMoney;
-        HealthBarImage = HealthBar.GetComponent<Image>();
 
         unlockVisibility();
     }
@@ -157,7 +154,7 @@ public class HUDmanager : MonoBehaviour
     {
         health = LevelManager.Singleton.LocalPlayer.Health;
 
-        HealthBarImage.fillAmount = health / maxHealth;
+        HealthText.text = health.ToString();
 
         if (!healthUIactive && hudEnabled)
             StartCoroutine(healthInteract());
