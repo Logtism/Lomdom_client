@@ -77,4 +77,9 @@ public class Login : MonoBehaviour
         error_text.text = AuthManager.Singleton.error_msg;
         AuthManager.Singleton.error_msg = "";
     }
+
+    public void createAccount()
+    {
+        Application.OpenURL("https://5qgn3nwglr.pythonanywhere.com/register/");
+    }
 }
