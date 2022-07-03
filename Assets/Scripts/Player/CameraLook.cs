@@ -37,6 +37,8 @@ public class CameraLook : MonoBehaviour
     private float VertialRotation;
     private float HorizontalRotation;
 
+    private bool cursorActive;
+
     public GameObject cameraHolder;
     private void Awake()
     {
@@ -110,15 +112,19 @@ public class CameraLook : MonoBehaviour
 
     public void ToggleCursorMode()
     {
-        Cursor.visible = !Cursor.visible;
-
-        if (Cursor.lockState == CursorLockMode.None)
+        if (cursorActive)
         {
+            Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+            cursorActive = false;
+            return;
         }
-        else
+
+        if(cursorActive == false)
         {
+            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            cursorActive = true;
         }
     }
 }
