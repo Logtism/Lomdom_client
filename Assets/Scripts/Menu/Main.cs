@@ -14,6 +14,22 @@ public class Deny : UnityEvent { }
 
 public class Main : MonoBehaviour
 {
+    private static Main _singleton;
+    public static Main Singleton
+    {
+        get => _singleton;
+        private set
+        {
+            if (_singleton == null)
+                _singleton = value;
+            else if (_singleton != value)
+            {
+                Debug.Log($"{nameof(Main)} instance already exists, destroying object!");
+                Destroy(value);
+            }
+        }
+    }
+
     [Header("Menu elements")]
     [SerializeField] private GameObject MainMenuPanel;
     [SerializeField] private PopUp popUpOnExitGame;
@@ -38,6 +54,11 @@ public class Main : MonoBehaviour
 
     private bool dialogPopUpOpen = false;
     private PopUp currentDisplayPopUp;
+
+    private void Awake()
+    {
+        Singleton = this;    
+    }
 
     private void Update()
     {
@@ -70,6 +91,11 @@ public class Main : MonoBehaviour
         {
             isOnMainMenu = false;
             //MainMenuPanel.SetActive(false);
+
+            for (int i = 0; i < Menu_MainButtons.Length; i++)
+            {
+                Menu_MainButtons[i].interactable = false;
+            }
         }
     }
 
@@ -81,6 +107,11 @@ public class Main : MonoBehaviour
         for (int i = 0; i < MenuPanels.Length; i++)
         {
             MenuPanels[i].SetActive(false);
+        }
+
+        for (int i = 0; i < Menu_MainButtons.Length; i++)
+        {
+            Menu_MainButtons[i].interactable = true;
         }
     }
 

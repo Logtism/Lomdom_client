@@ -20,4 +20,9 @@ public class Main_Functions : MonoBehaviour
     {
         NetworkManager.Singleton.Connect();
     }
+
+    public void closePopUp()
+    {
+        Main.Singleton.closeDialogPopUp();
+    }
 }
