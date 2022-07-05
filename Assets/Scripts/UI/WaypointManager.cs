@@ -59,7 +59,7 @@ public class WaypointManager : MonoBehaviour
 
             float dist = Vector3.Distance(waypointHolder.transform.position, localPlayer.transform.position);
             distanceToSelected = Mathf.RoundToInt(dist);
-            distanceText.text = distanceToSelected.ToString();
+            distanceText.text = "| " + distanceToSelected.ToString() + "m |";
 
             if (waypointMarker.transform.position != pos)
                 waypointMarker.transform.position = pos;
