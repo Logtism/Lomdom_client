@@ -11,6 +11,9 @@ TagManager:
   - LocalPlayer
   - HeistInfoManager
   - MissionMenuManager
+  - waypointHolder
+  - Interaction_Fill
+  - Interaction_Frame
   layers:
   - Default
   - TransparentFX

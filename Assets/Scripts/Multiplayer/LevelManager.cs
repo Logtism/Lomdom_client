@@ -94,7 +94,7 @@ public class LevelManager : MonoBehaviour
 
         if (player.IsLocal)
         {
-            // Show a respawn screen.
+            RespawnManager.Singleton.showRespawnScreen();
         }
         else
         {
@@ -111,7 +111,7 @@ public class LevelManager : MonoBehaviour
 
         if (player.IsLocal)
         {
-            // Turn off the respawn screen and active the player gameobject.
+            RespawnManager.Singleton.closeRespawnScreen();
         }
         else
         {
