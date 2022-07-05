@@ -55,6 +55,7 @@ public class WaypointManager : MonoBehaviour
         if(isWaypointActive == true)
         {
             Vector3 pos = mainCam.WorldToScreenPoint(selectedWaypoint.position + waypointOffset);
+            if(pos.z < 0) { pos *= -1; }
 
             float dist = Vector3.Distance(waypointHolder.transform.position, localPlayer.transform.position);
             distanceToSelected = Mathf.RoundToInt(dist);
