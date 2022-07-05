@@ -239,9 +239,7 @@ public class HUDmanager : MonoBehaviour
         if (!lockVisibility)
         {
             for (moneyUItimer = fadeTime; moneyUItimer >= 0; moneyUItimer -= 1)
-            {
-                Debug.Log(moneyUItimer);
-                
+            {      
                 if (!hudEnabled)
                 {
                     MoneyAnimator.Play("MoneyOUT", 0, 0.0f);
@@ -278,12 +276,8 @@ public class HUDmanager : MonoBehaviour
 
         if (!lockVisibility)
         {
-            Debug.Log("log");
-
             for (ammoUItimer = fadeTime; ammoUItimer >= 0; ammoUItimer -= 1)
-            {
-                Debug.Log(ammoUItimer);
-                
+            {               
                 if (!hudEnabled)
                 {
                     AmmoAnimator.Play("AmmoOUT", 0, 0.0f);
@@ -322,8 +316,6 @@ public class HUDmanager : MonoBehaviour
         {
             for (mapUItimer = fadeTime; mapUItimer >= 0; mapUItimer -= 1)
             {
-                Debug.Log(mapUItimer);
-
                 if (!hudEnabled)
                 {
                     MapAnimator.Play("MapOUT", 0, 0.0f);
@@ -361,9 +353,7 @@ public class HUDmanager : MonoBehaviour
         if (!lockVisibility)
         {
             for (healthUItimer = fadeTime; healthUItimer >= 0; healthUItimer -= 1)
-            {
-                Debug.Log(healthUItimer);
-                
+            {       
                 if (!hudEnabled)
                 {
                     HealthAnimator.Play("HealthOUT", 0, 0.0f);
