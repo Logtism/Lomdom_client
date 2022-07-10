@@ -35,7 +35,9 @@ public class Main : MonoBehaviour
     [SerializeField] private PopUp popUpOnExitGame;
     [SerializeField] private Button[] Menu_MainButtons;
     [SerializeField] private GameObject[] MenuPanels;
+    [SerializeField] private GameObject OnlineTabPanel;
     private bool isOnMainMenu = true;
+    private bool isOnFreindsTab = false;
 
     [Header("PopUp - Dialog box")]
     [SerializeField] private GameObject DialogBoxMain;
@@ -64,9 +66,9 @@ public class Main : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isOnMainMenu == false) { closeAllMenus(); }
-
-            else { dialogPopUp(popUpOnExitGame); }
+            if(isOnMainMenu == true) { dialogPopUp(popUpOnExitGame); }            
+            if (isOnMainMenu == false && isOnFreindsTab == false) { closeAllMenus(); }
+            if(isOnFreindsTab == true) { switchActiveMenu(OnlineTabPanel); }           
         }
     }
 
@@ -78,6 +80,9 @@ public class Main : MonoBehaviour
     public void switchActiveMenu(GameObject menuPanel)
     {
         menuPanel.SetActive(true);
+
+        if(menuPanel.name == "Freinds") { isOnFreindsTab = true; }
+        else { isOnFreindsTab = false; }
 
         for (int i = 0; i < MenuPanels.Length; i++)
         {

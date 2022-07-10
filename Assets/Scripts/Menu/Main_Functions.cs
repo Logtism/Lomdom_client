@@ -25,4 +25,10 @@ public class Main_Functions : MonoBehaviour
     {
         Main.Singleton.closeDialogPopUp();
     }
+
+    public void redirectToNews()
+    {
+        closePopUp();
+        Application.OpenURL("https://5qgn3nwglr.pythonanywhere.com/home/");
+    }
 }
