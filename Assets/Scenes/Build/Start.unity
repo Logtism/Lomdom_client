@@ -312,6 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352b2db22e00b8c4cb8ec7343e428b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsId: 0000
   enableHeadbob: 0
   enableScreenshake: 0
   enableAutoRespawn: 0
@@ -327,6 +328,7 @@ MonoBehaviour:
   enableAmbience: 0
   enableVehicleMusic: 0
   enableHeistMusic: 0
+  resolutionPreset: 0
   graphicsPreset: 0
   antiAliasing: 0
   anisotropicFilteringEnabled: 0
@@ -340,6 +342,9 @@ MonoBehaviour:
   enableNameTags: 0
   serverRegion: 0
   accountType: 0
+  unsavedChanges: 0
+  requireRestart: 0
+  unappliedChanges: 0
 --- !u!114 &400316040
 MonoBehaviour:
   m_ObjectHideFlags: 0

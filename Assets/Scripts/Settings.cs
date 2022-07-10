@@ -23,6 +23,9 @@ public class Settings : MonoBehaviour
         }
     }
 
+    [Header("Settings ID")]
+    [SerializeField] public string settingsId = "0000";
+    
     [Header("For | General")]
     [SerializeField] public int enableHeadbob;
     [SerializeField] public int enableScreenshake;
@@ -43,6 +46,7 @@ public class Settings : MonoBehaviour
     [SerializeField] public int enableHeistMusic;
 
     [Header("For | Video")]
+    [SerializeField] public int resolutionPreset;
     [SerializeField] public int graphicsPreset;
     [SerializeField] public int antiAliasing;
     [SerializeField] public int anisotropicFilteringEnabled;
@@ -58,6 +62,11 @@ public class Settings : MonoBehaviour
     [SerializeField] public int enableNameTags;
     [SerializeField] public int serverRegion;
     [SerializeField] public int accountType;
+
+    [Header("Runtime modifiers")]
+    [SerializeField] public bool unsavedChanges;
+    [SerializeField] public bool requireRestart;
+    [SerializeField] public bool unappliedChanges;
 
     private void Awake()
     {
@@ -96,6 +105,7 @@ public class Settings : MonoBehaviour
         enableHeistMusic = PlayerPrefs.GetInt("enableHeistMusic", enableHeistMusic);
 
         //For video
+        resolutionPreset = PlayerPrefs.GetInt("resolutionPreset", resolutionPreset);
         graphicsPreset = PlayerPrefs.GetInt("graphicsPreset", graphicsPreset);
         antiAliasing = PlayerPrefs.GetInt("antiAliasing", antiAliasing);
         anisotropicFilteringEnabled = PlayerPrefs.GetInt("anisotropicFilteringEnabled", anisotropicFilteringEnabled);
@@ -135,6 +145,7 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetInt("enableHeistMusic", enableHeistMusic);
 
         //For video
+        PlayerPrefs.SetInt("resolutionPreset", resolutionPreset);
         PlayerPrefs.SetInt("graphicsPreset", graphicsPreset);
         PlayerPrefs.SetInt("antiAliasing", antiAliasing);
         PlayerPrefs.SetInt("anisotropicFilteringEnabled", anisotropicFilteringEnabled);
