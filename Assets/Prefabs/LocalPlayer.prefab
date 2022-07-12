@@ -1982,11 +1982,6 @@ MonoBehaviour:
   player: {fileID: 1351163910160733773}
   sensitvity: 3
   ClampAngle: 85
-  headbobEnabled: 1
-  headbobAmplitude: 0.005
-  headbobFreqeuncy: 17
-  playerCamera: {fileID: 4615082722497934454}
-  playerCameraHolder: {fileID: 5123398907544565970}
   cameraHolder: {fileID: 4298625369642524833}
 --- !u!1 &4710061859529113257
 GameObject:
@@ -2617,6 +2612,7 @@ GameObject:
   - component: {fileID: 6746694443848073586}
   - component: {fileID: 5011462806175608221}
   - component: {fileID: 5199217883023815241}
+  - component: {fileID: 1005910446753667852}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -2803,6 +2799,28 @@ MonoBehaviour:
       data1: 0
       data2: 0
   defaultFrameSettings: 0
+--- !u!114 &1005910446753667852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465463577631169444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7fd0d97ba44b546918c27934696163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 6465463577631169444}
+  defaultCameraPos: {x: 0, y: 0, z: 0}
+  defaultCameraRotation: {x: 0, y: 0, z: 0, w: 0}
+  reduceDynamics: 0
+  headbobEnabled: 1
+  headbobTimer: 0
+  headbobSpeed: 10
+  headbobAmount: 0.05
+  swayTime: 1
+  swayAmount: 15
 --- !u!1 &6476315697375259760
 GameObject:
   m_ObjectHideFlags: 0
@@ -3759,14 +3777,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1611b64ea71a2174b8e050d49c5f24d6, type: 3}
---- !u!4 &5003017301211183164 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1611b64ea71a2174b8e050d49c5f24d6, type: 3}
-  m_PrefabInstance: {fileID: 4820242238907752407}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5631075232780591750 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1611b64ea71a2174b8e050d49c5f24d6, type: 3}
+  m_PrefabInstance: {fileID: 4820242238907752407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5003017301211183164 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1611b64ea71a2174b8e050d49c5f24d6, type: 3}
   m_PrefabInstance: {fileID: 4820242238907752407}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6740649593096896719
