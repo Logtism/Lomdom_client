@@ -33,12 +33,6 @@ public class PlayerCameraDynamics : MonoBehaviour
     private float returnSpeed = 100;
     [SerializeField, Range(0, 10)] private float headbobAmount;
 
-    [Header("Sway settings")]
-    [SerializeField, Range(0, 2)] private float swayTime = 0.45f;
-    [SerializeField, Range(0, 35)] private float swayAmount = 15;
-    private bool isSway = false;
-
-
     private void Awake()
     {
         Singleton = this;
@@ -51,7 +45,7 @@ public class PlayerCameraDynamics : MonoBehaviour
             if (headbobEnabled == true)
                 doHeadbob();
         }
-        else
+        else if(headbobTimer > 0)
         {
             headbobTimer = 0;
             playerCamera.transform.localPosition = Vector3.Lerp(playerCamera.transform.localPosition, defaultCameraPos, returnSpeed * Time.deltaTime);
