@@ -36,6 +36,7 @@ public class Main : MonoBehaviour
     [SerializeField] private Button[] Menu_MainButtons;
     [SerializeField] private GameObject[] MenuPanels;
     [SerializeField] private GameObject OnlineTabPanel;
+    [SerializeField] private Button onlineConnect;
     private bool isOnMainMenu = true;
     private bool isOnFreindsTab = false;
 
@@ -59,7 +60,8 @@ public class Main : MonoBehaviour
 
     private void Awake()
     {
-        Singleton = this;    
+        Singleton = this;
+        //onlineConnect.interactable = false;
     }
 
     private void Update()
@@ -198,4 +200,10 @@ public class Main : MonoBehaviour
     }
 
     //---------------------------
+
+    //------- Extra
+    public void enableOnlinePlay()
+    {
+        onlineConnect.interactable = true;
+    }
 }
