@@ -855,7 +855,7 @@ GameObject:
   - component: {fileID: 69299527}
   - component: {fileID: 69299530}
   m_Layer: 5
-  m_Name: Tutorial
+  m_Name: MenuItem2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2477,7 +2477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Online
+  m_text: Play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 585f8d864d5647841a21cd6b9ad88d37, type: 2}
   m_sharedMaterial: {fileID: -3493896712002934381, guid: 585f8d864d5647841a21cd6b9ad88d37, type: 2}
@@ -3634,7 +3634,7 @@ GameObject:
   - component: {fileID: 359577919}
   - component: {fileID: 359577922}
   m_Layer: 5
-  m_Name: Online
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5080,7 +5080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tutorial
+  m_text: MenuItem2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 585f8d864d5647841a21cd6b9ad88d37, type: 2}
   m_sharedMaterial: {fileID: -3493896712002934381, guid: 585f8d864d5647841a21cd6b9ad88d37, type: 2}
