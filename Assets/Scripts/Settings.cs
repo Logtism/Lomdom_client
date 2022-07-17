@@ -68,6 +68,8 @@ public class Settings : MonoBehaviour
     [SerializeField] public bool requireRestart;
     [SerializeField] public bool unappliedChanges;
 
+    private string selectedSettingName;
+
     private void Awake()
     {
         Singleton = this;
@@ -76,12 +78,17 @@ public class Settings : MonoBehaviour
 
     //private void Update()
     //{
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    savePlayerPrefs();
-        //    Debug.Log("updated player save (loca)");
-        //}
+    //if (Input.GetKeyDown(KeyCode.Space))
+    //{
+    //    savePlayerPrefs();
+    //    Debug.Log("updated player save (loca)");
     //}
+    //}
+
+    private void Update()
+    {
+
+    }
 
     public void loadPlayerPrefs()
     {
