@@ -282,95 +282,6 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!1 &400316038
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 400316041}
-  - component: {fileID: 400316040}
-  - component: {fileID: 400316039}
-  m_Layer: 0
-  m_Name: SettingsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &400316039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400316038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 352b2db22e00b8c4cb8ec7343e428b11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settingsId: 0000
-  enableHeadbob: 0
-  enableScreenshake: 0
-  enableAutoRespawn: 0
-  vehicleHud: 0
-  dynamicHud: 0
-  crosshairEnabled: 0
-  waypointsEnabled: 0
-  reduceUiMotion: 0
-  localUiLanguage: 0
-  masterVolume: 0
-  musicVolume: 0
-  soundeffectsVolume: 0
-  enableAmbience: 0
-  enableVehicleMusic: 0
-  enableHeistMusic: 0
-  resolutionPreset: 0
-  graphicsPreset: 0
-  antiAliasing: 0
-  anisotropicFilteringEnabled: 0
-  enableRealtimeShadows: 0
-  shadowResolution: 0
-  enableSoftParticles: 0
-  enableRealtimeReflections: 0
-  targetFramerate: 0
-  enableServerChat: 0
-  saveLoginInfo: 0
-  enableNameTags: 0
-  serverRegion: 0
-  accountType: 0
-  unsavedChanges: 0
-  requireRestart: 0
-  unappliedChanges: 0
---- !u!114 &400316040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400316038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a154d66de43e9fe409ce27c54fad1030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &400316041
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400316038}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &435608914
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +445,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &437902490
 MonoBehaviour:
@@ -810,7 +721,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1073716609
 MonoBehaviour:
@@ -894,7 +805,7 @@ Transform:
   m_Children:
   - {fileID: 539861209}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1420961068
 MonoBehaviour:
@@ -964,7 +875,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1561739092
 GameObject:

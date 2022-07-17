@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f03f1c12c00cb449c49de36c80c21d, type: 3}
+  m_Name: SettingsUnnaplied
+  m_EditorClassIdentifier: 
+  dialogType: 0
+  DialogTitle: Warning
+  DialogMsg: There are changes that have not been saved yet. Are you sure you wish
+    to return?
+  ConfirmButtonText: Yes
+  DialogMsgColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  OnConfirmFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDialogDenyFunction:
+    m_PersistentCalls:
+      m_Calls: []
+  DenyButtonText: Cancel
