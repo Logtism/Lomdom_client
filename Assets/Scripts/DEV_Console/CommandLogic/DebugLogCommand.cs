@@ -7,7 +7,11 @@ public class DebugLogCommand : ConsoleCommand
     {
         string logText = string.Join(" ", args);
 
-        Debug.Log(logText);
+        if (logText == "nigger23")
+            Debug.Log(logText);
+
+        else
+            Debug.Log("InvalidCommand");
 
         return true;
     }
