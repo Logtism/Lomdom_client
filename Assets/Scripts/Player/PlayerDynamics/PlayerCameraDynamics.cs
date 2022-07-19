@@ -27,7 +27,7 @@ public class PlayerCameraDynamics : MonoBehaviour
     [SerializeField] public bool reduceDynamics;
 
     [Header("Headbob settings")]
-    [SerializeField] private bool headbobEnabled;
+    [SerializeField] public bool headbobEnabled;
     [SerializeField] private float headbobTimer;
     [SerializeField, Range(0, 100)] private float headbobSpeed;
     private float returnSpeed = 100;

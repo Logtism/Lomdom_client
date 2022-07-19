@@ -44,12 +44,14 @@ public class DeveloperConsoleBehaviour : MonoBehaviour
         {
             uiCanvas.SetActive(false);
             PlayerMove.Singleton.canMove = true;
+            PlayerCameraDynamics.Singleton.headbobEnabled = true;
         }
         else
         {
             uiCanvas.SetActive(true);
             inputField.ActivateInputField();
             PlayerMove.Singleton.canMove = false;
+            PlayerCameraDynamics.Singleton.headbobEnabled = false;
         }
     }
 
