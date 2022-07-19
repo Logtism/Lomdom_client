@@ -1934,10 +1934,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CamTransform: {fileID: 4615082722497934454}
+  model: {fileID: 4710061859529113257}
   interpolator: {fileID: 9077933403826654093}
   IsLocal: 1
   Health: 0
   Balance: 0
+  InVehicle: 0
+  vehicle: {fileID: 0}
 --- !u!114 &147297357780626846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2819,8 +2822,6 @@ MonoBehaviour:
   headbobTimer: 0
   headbobSpeed: 10
   headbobAmount: 0.05
-  swayTime: 1
-  swayAmount: 15
 --- !u!1 &6476315697375259760
 GameObject:
   m_ObjectHideFlags: 0

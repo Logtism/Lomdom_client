@@ -52,6 +52,12 @@ public class LevelManager : MonoBehaviour
         StartCoroutine("EnableOnLoad");
     }
 
+    public Player GetPlayer(ushort clientid)
+    {
+        Players.TryGetValue(clientid, out Player player);
+        return player;
+    }
+
     [MessageHandler((ushort)Messages.STC.create_player)]
     private static void CreatePlayer(Message message)
     {
@@ -124,7 +130,17 @@ public class LevelManager : MonoBehaviour
     {
         if (Singleton.Players.TryGetValue(message.GetUShort(), out Player player))
         {
+            //player.MoveVehicle(message.GetUInt(), message.GetVector3(), message.GetVector3());
             player.Move(message.GetUInt(), message.GetVector3(), message.GetVector3());
+        }
+    }
+
+    [MessageHandler((ushort)Messages.STC.vehicle_move)]
+    private static void VehicleMove(Message message)
+    {
+        if (Singleton.Players.TryGetValue(message.GetUShort(), out Player player))
+        {
+            player.MoveVehicle(message.GetUInt(), message.GetVector3(), message.GetQuaternion());
         }
     }
 

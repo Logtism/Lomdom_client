@@ -46,6 +46,20 @@ public class Messages
         playerExit_RobberyTrigger,
 
         waypointUpdate,
+
+        spawn_vehicle,
+        despawn_vehicle,
+
+        can_enter_vehicle,
+        cannot_enter_vehicle,
+
+        entered_vehicle_driver,
+        entered_vehicle_passenger,
+        left_vehicle,
+
+        vehicle_move,
+
+        send_chat_msg,
     }
 
     // Client to sever id's
@@ -66,6 +80,11 @@ public class Messages
         completeRobbery_input,
 
         playerClick_Respawn,
+
+        enter_vehicle,
+        leave_vehicle,
+
+        send_chat_msg,
     }
 }
 
