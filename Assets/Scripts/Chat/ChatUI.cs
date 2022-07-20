@@ -68,18 +68,7 @@ public class ChatUI : MonoBehaviour
 
         if (ChatOpen && Input.GetKeyDown(KeyCode.Return))
         {
-            if (inputField.text.Length <= 500 && inputField.text.Length > 0)
-            {
-                Message message = Message.Create(MessageSendMode.reliable, Messages.CTS.send_chat_msg);
-                message.AddString(inputField.text);
-                NetworkManager.Singleton.Client.Send(message);
-                inputField.text = "";
-            }
-            else
-            {
-                AddMessage("Msg can not be over 500 chars.");
-            }
-            inputField.ActivateInputField();
+            sendMsg();
         }
     }
 
@@ -94,5 +83,21 @@ public class ChatUI : MonoBehaviour
     {
         string msg = message.GetString();
         Singleton.AddMessage(msg);
+    }
+
+    public void sendMsg()
+    {
+        if (inputField.text.Length <= 500 && inputField.text.Length > 0)
+        {
+            Message message = Message.Create(MessageSendMode.reliable, Messages.CTS.send_chat_msg);
+            message.AddString(inputField.text);
+            NetworkManager.Singleton.Client.Send(message);
+            inputField.text = "";
+        }
+        else
+        {
+            AddMessage("Msg can not be over 500 chars.");
+        }
+        inputField.ActivateInputField();
     }
 }
