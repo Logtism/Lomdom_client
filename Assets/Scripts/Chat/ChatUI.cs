@@ -36,6 +36,8 @@ public class ChatUI : MonoBehaviour
 
     private bool ChatOpen = false;
 
+    private float chatTimer = 0;
+
     private void OpenChat()
     {
         Menu.SetActive(true);
@@ -87,17 +89,25 @@ public class ChatUI : MonoBehaviour
 
     public void sendMsg()
     {
-        if (inputField.text.Length <= 500 && inputField.text.Length > 0)
+        if (inputField.text.Length <= 500 && inputField.text.Length > 0 && chatTimer == 0)
         {
             Message message = Message.Create(MessageSendMode.reliable, Messages.CTS.send_chat_msg);
             message.AddString(inputField.text);
             NetworkManager.Singleton.Client.Send(message);
             inputField.text = "";
+            StartCoroutine(chatCooldown());
         }
-        else
+        if(inputField.text.Length > 500)
         {
             AddMessage("Msg can not be over 500 chars.");
         }
         inputField.ActivateInputField();
+    }
+
+    private IEnumerator chatCooldown()
+    {
+        chatTimer = 1;
+        yield return new WaitForSeconds(1);
+        chatTimer = 0;
     }
 }

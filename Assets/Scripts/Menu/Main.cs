@@ -37,6 +37,7 @@ public class Main : MonoBehaviour
     [SerializeField] private GameObject[] MenuPanels;
     [SerializeField] private GameObject OnlineTabPanel;
     [SerializeField] private Button onlineConnect;
+    [SerializeField] private GameObject loadingPanel;
     private bool isOnMainMenu = true;
     private bool isOnFreindsTab = false;
 
@@ -77,6 +78,7 @@ public class Main : MonoBehaviour
     public void Play()
     {
         NetworkManager.Singleton.Connect();
+        loadingPanel.SetActive(true);
     }
 
     public void switchActiveMenu(GameObject menuPanel)
