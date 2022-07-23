@@ -37,7 +37,7 @@ public class MissionManagerTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && playerInTrigger && MissionMenuManager.Singleton.missionMenuOpen == false && PauseManager.Singleton.menuIsOpen == false)
+        if (Input.GetKeyDown(KeyCode.E) && playerInTrigger && MissionMenuManager.Singleton.missionMenuOpen == false && PauseManager.Singleton.menuIsOpen == false && ChatUI.Singleton.ChatOpen == false)
         {
             MissionMenuManager.Singleton.openMissionMenu();
         }

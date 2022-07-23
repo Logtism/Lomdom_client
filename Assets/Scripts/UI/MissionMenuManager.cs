@@ -26,7 +26,8 @@ public class MissionMenuManager : MonoBehaviour
     [SerializeField] private GameObject missionMenu;
     [SerializeField] private Mission selectedMissionOnStart;
     [SerializeField] private TextMeshProUGUI missionTypeText;
-    [SerializeField] private TextMeshProUGUI missionRewardText;  
+    [SerializeField] private TextMeshProUGUI missionRewardText;
+    [SerializeField] private GameObject[] missionMenuTabs;
     
     public bool missionMenuOpen;
     public bool canStartMission;
@@ -52,6 +53,19 @@ public class MissionMenuManager : MonoBehaviour
         LocalPlayer.GetComponent<PlayerMove>().canMove = false;
 
         CameraLook.Singleton.ToggleCursorMode();
+    }
+
+    public void switchActiveMissionMenu(GameObject newTab)
+    {
+        newTab.SetActive(true);
+
+        for (int i = 0; i < missionMenuTabs.Length; i++)
+        {
+            if(missionMenuTabs[i] != newTab)
+            {
+                missionMenuTabs[i].SetActive(false);
+            }
+        }
     }
 
     public void closeMissionMenu()

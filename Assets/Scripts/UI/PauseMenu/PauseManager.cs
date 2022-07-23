@@ -31,7 +31,7 @@ public class PauseManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && MissionMenuManager.Singleton.missionMenuOpen == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && MissionMenuManager.Singleton.missionMenuOpen == false && ChatUI.Singleton.ChatOpen == false)
         {
             if(menuIsOpen) { manualMenuClose(); }
 

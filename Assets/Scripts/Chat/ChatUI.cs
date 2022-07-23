@@ -34,7 +34,7 @@ public class ChatUI : MonoBehaviour
     [SerializeField] private TMP_Text textbox;
     [SerializeField] private TMP_InputField inputField;
 
-    private bool ChatOpen = false;
+    public bool ChatOpen = false;
 
     private float chatTimer = 0;
 
@@ -53,12 +53,12 @@ public class ChatUI : MonoBehaviour
         CameraLook.Singleton.ToggleCursorMode();
         PlayerMove.Singleton.canMove = true;
         Menu.SetActive(false);
-        ChatOpen = false;
+        StartCoroutine(closeChatCooldown());
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T) && !ChatOpen)
+        if (Input.GetKeyDown(KeyCode.T) && !ChatOpen && PauseManager.Singleton.menuIsOpen == false && MissionMenuManager.Singleton.missionMenuOpen == false)
         {
             OpenChat();
         }
@@ -109,5 +109,11 @@ public class ChatUI : MonoBehaviour
         chatTimer = 1;
         yield return new WaitForSeconds(1);
         chatTimer = 0;
+    }
+
+    private IEnumerator closeChatCooldown()
+    {
+        yield return new WaitForSeconds(0.1f);
+        ChatOpen = false;
     }
 }

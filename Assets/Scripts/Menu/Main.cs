@@ -77,8 +77,8 @@ public class Main : MonoBehaviour
 
     public void Play()
     {
-        NetworkManager.Singleton.Connect();
         loadingPanel.SetActive(true);
+        NetworkManager.Singleton.Connect();
     }
 
     public void switchActiveMenu(GameObject menuPanel)
