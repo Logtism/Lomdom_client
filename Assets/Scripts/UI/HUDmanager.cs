@@ -36,6 +36,7 @@ public class HUDmanager : MonoBehaviour
     [SerializeField] private GameObject AmmoHolder;
     [SerializeField] private GameObject MapHolder;
     [SerializeField] private GameObject HealthHolder;
+    [SerializeField] private GameObject Crosshair;
 
     [Header("HUD Text elements")]
     [SerializeField] private TextMeshProUGUI MoneyText;
@@ -72,6 +73,9 @@ public class HUDmanager : MonoBehaviour
 
     private float mapUItimer;
     public bool mapUIactive = true;
+
+    private bool crosshairEnabled = true;
+    private bool crosshairToggle = true;
 
     private void Awake()
     {
@@ -381,6 +385,15 @@ public class HUDmanager : MonoBehaviour
 
 
             }
+        }
+    }
+
+    public void toggleCrosshair()
+    {
+        if (crosshairEnabled)
+        {
+            crosshairToggle = !crosshairToggle;
+            Crosshair.SetActive(crosshairToggle);
         }
     }
 }

@@ -46,6 +46,7 @@ public class PauseManager : MonoBehaviour
         HUDmanager.Singleton.showFullUI();
         PlayerMove.Singleton.canMove = true;
         CameraLook.Singleton.ToggleCursorMode();
+        HUDmanager.Singleton.toggleCrosshair();
 
         menuIsOpen = false;
     }
@@ -58,6 +59,7 @@ public class PauseManager : MonoBehaviour
 
             PlayerMove.Singleton.canMove = false;
             CameraLook.Singleton.ToggleCursorMode();
+            HUDmanager.Singleton.toggleCrosshair();
 
             if (HUDmanager.Singleton.mapUIactive || HUDmanager.Singleton.ammoUIactive || HUDmanager.Singleton.healthUIactive || HUDmanager.Singleton.moneyUIactive)
             {

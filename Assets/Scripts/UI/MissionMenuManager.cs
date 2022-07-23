@@ -53,6 +53,7 @@ public class MissionMenuManager : MonoBehaviour
         LocalPlayer.GetComponent<PlayerMove>().canMove = false;
 
         CameraLook.Singleton.ToggleCursorMode();
+        HUDmanager.Singleton.toggleCrosshair();
     }
 
     public void switchActiveMissionMenu(GameObject newTab)
@@ -78,6 +79,7 @@ public class MissionMenuManager : MonoBehaviour
         LocalPlayer.GetComponent<PlayerMove>().canMove = true;
 
         CameraLook.Singleton.ToggleCursorMode();
+        HUDmanager.Singleton.toggleCrosshair();
     }
 
     public void updateMissionInfo(Mission mission)
