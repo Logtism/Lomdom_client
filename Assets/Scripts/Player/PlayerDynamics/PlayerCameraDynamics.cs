@@ -28,6 +28,7 @@ public class PlayerCameraDynamics : MonoBehaviour
 
     [Header("Headbob settings")]
     [SerializeField] public bool headbobEnabled;
+    [SerializeField] public bool settingsHeadbobEnabled = true;
     [SerializeField] private float headbobTimer;
     [SerializeField, Range(0, 100)] private float headbobSpeed;
     private float returnSpeed = 100;
@@ -42,8 +43,11 @@ public class PlayerCameraDynamics : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) //Replace with better movement detection
         {
-            if (headbobEnabled == true)
-                doHeadbob();
+            if (settingsHeadbobEnabled == true)
+            {
+                if (headbobEnabled == true)
+                    doHeadbob();
+            }
         }
         else if(headbobTimer > 0)
         {

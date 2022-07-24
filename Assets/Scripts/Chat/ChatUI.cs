@@ -43,6 +43,7 @@ public class ChatUI : MonoBehaviour
         Menu.SetActive(true);
         CameraLook.Singleton.ToggleCursorMode();
         PlayerMove.Singleton.canMove = false;
+        PlayerCameraDynamics.Singleton.headbobEnabled = false;
         scroll.verticalNormalizedPosition = 0f;
         ChatOpen = true;
         inputField.ActivateInputField();
@@ -52,6 +53,7 @@ public class ChatUI : MonoBehaviour
     {
         CameraLook.Singleton.ToggleCursorMode();
         PlayerMove.Singleton.canMove = true;
+        PlayerCameraDynamics.Singleton.headbobEnabled = true;
         Menu.SetActive(false);
         StartCoroutine(closeChatCooldown());
     }
